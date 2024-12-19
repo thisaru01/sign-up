@@ -3,6 +3,13 @@ import "../App";
 import backgroundImage from "../assets/background.jpg";
 import logo1 from "../assets/logo1.png";
 import logo2 from "../assets/logo2.png";
+import { IoPersonCircleOutline } from "react-icons/io5";
+import { IoEyeOutline } from "react-icons/io5";
+import { IoLockClosedOutline } from "react-icons/io5";
+import { IoMailOutline } from "react-icons/io5";
+import { IoCallOutline } from "react-icons/io5";
+import { IoLogoGoogle } from "react-icons/io5";
+
 function SignUp() {
   return (
     <div
@@ -11,7 +18,7 @@ function SignUp() {
     >
       <div className="bg-white shadow-md rounded-lg w-[45%] h-[95%] p-6 flex flex-col items-center ml-5">
         <img src={logo1} alt="Logo1" className="w-10 h-10 mb-0.9" />
-        <img src={logo2} alt="Logo1" className="w-40 h-400 mb-4" />
+        <img src={logo2} alt="Logo1" className="w-40 h-400 mb-0" />
 
         <h1 className="text-2xl font-semibold mb-2 text-center">
           Ready to Learn?
@@ -21,38 +28,69 @@ function SignUp() {
           Step in and start exploring quizzes tailored just for you!
         </p>
 
-        <button className="border border-gray-300 text-black py-1 px-12 rounded-lg w-auto mb-4">
+        <button className="flex items-center border border-gray-300 text-black py-1 px-12 rounded-lg w-auto mb-6">
+        <IoLogoGoogle className="text-2xl mx-2 my-1 text-gray-600" />
           Sign up with Google
         </button>
 
-        <p className="text-gray-400 text-center mb-4">or</p>
+        <div className="flex items-center justify-center mb-6 w-[450px]">
+          <div className="flex-grow border-t-[3px] border-[#c6c5c6]"></div>
+          <p className="mx-4 text-black">or</p>
+          <div className="flex-grow border-t-[3px] border-[#c6c5c6]"></div>
+        </div>
 
-        <form className="w-[75%] flex flex-col items-center mt-6 gap-2">
-          <input
-            type="text"
-            placeholder="Username"
-            className="w-[75%] py-2 px-6 mb-3 border border-gray-300 rounded-lg"
-          />
 
-          <input
-            type="password"
-            placeholder="Password"
-            className="w-[75%] py-2 px-6 mb-3 border border-gray-300 rounded-lg"
-          />
-          <input
-            type="email"
-            placeholder="Email Address"
-            className="w-[75%] py-2 px-6 mb-3 border border-gray-300 rounded-lg"
-          />
-          <input
-            type="text"
-            placeholder="Mobile Number"
-            className="w-[75%] py-2 px-6 mb-4 border border-gray-300 rounded-lg"
-          />
+        <form className="w-[75%] flex flex-col items-center gap-2">
+          
+          <div className="flex items-center w-[75%] py-[2px] px-6 mb-3 border border-gray-300 rounded-lg p-2">
+
+            <IoPersonCircleOutline className="text-gray-400 m-2 text-2xl" />
+
+            <input
+              type="text"
+              placeholder="Username"
+              className="w-full outline-none"
+            />
+          </div>
+
+          <div className="flex items-center w-[75%] py-[2px] px-6 mb-3 border border-gray-300 rounded-lg p-2 relative">
+             
+              <IoLockClosedOutline className="text-gray-400 m-2 text-2xl" />
+
+              <input
+                type="password"
+                placeholder="Password"
+                className="w-full outline-none"
+              />
+
+              <IoEyeOutline className="text-gray-400 mr-2 text-2xl cursor-pointer absolute right-2" />
+          </div>
+
+          <div className="flex items-center w-[75%] py-[2px] px-6 mb-3 border border-gray-300 rounded-lg p-2">
+
+            <IoMailOutline className="text-gray-400 m-2 text-2xl" />
+
+            <input
+              type="email"
+              placeholder="Email Address"
+              className="w-full outline-none"
+            />
+          </div>
+
+          <div className="flex items-center w-[75%] py-[2px] px-6 mb-5 border border-gray-300 rounded-lg p-2">
+
+            <IoCallOutline className="text-gray-400 m-2 text-2xl" />
+
+            <input
+              type="text"
+              placeholder="Mobile Number"
+              className="w-full outline-none"
+            />
+          </div>
 
           <button
             type="submit"
-            className="bg-[#1b191c] text-[#fcfcfd] py-1 px-6 rounded-lg w-auto mx-auto mb-4"
+            className="bg-[#1b191c] text-[#fcfcfd] py-1 px-6 rounded-lg w-auto mx-auto mb-5"
           >
             Next
           </button>
@@ -60,7 +98,7 @@ function SignUp() {
 
         <p className="text-center mt-1 text-sm">
           Already have an account?{" "}
-          <a href="#" className="text-blue-500">
+          <a href="#" className="text-black">
             Log in
           </a>
         </p>
