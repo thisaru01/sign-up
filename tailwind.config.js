@@ -1,17 +1,13 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: [
-    "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}",
-  ],
+  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
       fontFamily: {
-        kulim: ['"Kulim Park"', 'sans-serif'],
+        regular: ["regular", "sans-serif"],
+        bold: ["bold", "sans-serif"],
       },
-
     },
   },
   plugins: [],
-}
-
+};

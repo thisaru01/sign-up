@@ -1,3 +1,19 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+  font-family: "regular";
+  src: url("./assets//Font//Parkinsans/static/Parkinsans-Regular.ttf")
+    format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "bold";
+  src: url("./assets//Font//Parkinsans/static/Parkinsans-SemiBold.ttf")
+    format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
