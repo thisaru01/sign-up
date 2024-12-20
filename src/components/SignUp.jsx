@@ -3,17 +3,21 @@ import "../App";
 import backgroundImage from "../assets/background.jpg";
 import logo1 from "../assets/logo1.png";
 import logo2 from "../assets/logo2.png";
-import { IoPersonCircleOutline, IoEyeOutline, IoLockClosedOutline, IoMailOutline, IoCallOutline, IoLogoGoogle } from "react-icons/io5";
-import { IoEyeOffOutline } from "react-icons/io5";
+import { IoPersonCircleOutline, IoEyeOutline, IoEyeOffOutline, IoLockClosedOutline, IoMailOutline, IoCallOutline, IoLogoGoogle } from "react-icons/io5";
 
-function SignUp() {
 
+function SignUp({ handleNavigate }) {
 
   const [showPassword, setShowPassword] = useState(false);
 
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
-  }
+  };
+
+  const handleLoginRedirect = (e) => {
+    e.preventDefault();
+    handleNavigate("login"); 
+  };
 
   return (
     <div
@@ -22,18 +26,18 @@ function SignUp() {
     >
        <div className="bg-white shadow-md rounded-lg  sm:w-[75%] md:w-[45%] md:h-[95%] sm:h-[95%] h-[95%]  p-6 flex flex-col items-center mx-auto md:ml-5">
       
-        <img src={logo1} alt="Logo1" className="w-10 h-10 mb-0.9" />
-        <img src={logo2} alt="Logo2" className="w-40 h-40 mb-0" />
+        <img src={logo1} alt="Logo1" className="w-12 h-12 mb-0" />
+        <img src={logo2} alt="Logo2" className="w-40 h-30 mb-0" />
 
-        <h1 className="text-2xl font-semibold mb-2 text-center">
+        <h1 className="text-4xl font-bold mb-2 text-center">
           Ready to Learn?
         </h1>
 
-        <p className="text-gray-600 text-center mb-6">
+        <p className="text-gray-600 font-semibold text-center mb-6">
           Step in and start exploring quizzes tailored just for you!
         </p>
 
-        <button className="flex items-center border border-gray-300 text-black py-1 px-[15%] rounded-lg w-auto mb-6">
+        <button className="flex items-center border border-gray-500 text-gray-500  py-[4px] px-[15%] rounded-xl w-auto mb-6">
           <IoLogoGoogle className="text-2xl mx-2 my-1 text-gray-600" />
           Sign up with Google
         </button>
@@ -45,7 +49,8 @@ function SignUp() {
         </div>
 
         <form className=" sm:w-[75%] md:w-[62%] md:h-[75%] flex flex-col items-center gap-2">
-          <div className="flex items-center w-full py-[2px] px-6 mb-3 border border-gray-300 rounded-lg p-2">
+
+          <div className="flex items-center w-full py-[1px] px-6 mb-3 border border-gray-500 rounded-xl gap-4">
             <IoPersonCircleOutline className="text-gray-400 m-2 text-2xl" />
             <input
               type="text"
@@ -54,12 +59,12 @@ function SignUp() {
             />
           </div>
 
-          <div className="flex items-center w-full py-[2px] px-6 mb-3 border border-gray-300 rounded-lg p-2 relative">
+          <div className="flex items-center w-full py-[1px] px-6 mb-3 border border-gray-500 rounded-xl relative">
             <IoLockClosedOutline className="text-gray-400 m-2 text-2xl" />
             <input
               type={showPassword ? "text" : "password"}
               placeholder="Password"
-              className="w-full outline-none"
+              className="w-full outline-none ml-4"
             />
             {showPassword ? (
               <IoEyeOffOutline
@@ -74,7 +79,7 @@ function SignUp() {
             )}
           </div>
 
-          <div className="flex items-center w-full py-[2px] px-6 mb-3 border border-gray-300 rounded-lg p-2">
+          <div className="flex items-center w-full py-[1px] px-6 mb-3 border border-gray-500 rounded-xl gap-4">
             <IoMailOutline className="text-gray-400 m-2 text-2xl" />
             <input
               type="email"
@@ -83,7 +88,7 @@ function SignUp() {
             />
           </div>
 
-          <div className="flex items-center w-full py-[2px] px-6 mb-5 border border-gray-300 rounded-lg p-2">
+          <div className="flex items-center w-full py-[1px] px-6 mb-4 border border-gray-500 rounded-xl gap-4">
 
             <IoCallOutline className="text-gray-400 m-2 text-2xl" />
 
@@ -96,7 +101,7 @@ function SignUp() {
 
           <button
             type="submit"
-            className="bg-[#1b191c] text-[#fcfcfd] py-1 px-6 rounded-lg w-auto mx-auto mb-5"
+            className="bg-[#1b191c] text-[#fcfcfd] py-[5px] px-6 rounded-lg w-auto mx-auto mb-5"
           >
             Next
           </button>
@@ -104,7 +109,7 @@ function SignUp() {
 
         <p className="text-center mt-1 text-sm">
           Already have an account?{" "}
-          <a href="#" className="text-black">
+          <a href="#" className="text-black ml-2" onClick={handleLoginRedirect}>
             Log in
           </a>
         </p>
